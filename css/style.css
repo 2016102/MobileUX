@@ -1,0 +1,319 @@
+/* Below line is used for online Google font */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+/* body {
+    background: url(../images/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+hr {
+    margin-bottom: 30px;
+}
+
+div.container {
+    width: 960px;
+    height: 610px;
+    margin: 50px auto;
+    font-family: 'Droid Serif', serif;
+    position: relative;
+}
+
+div.main {
+    width: 320px;
+    margin-top: 80px;
+    margin-left: 250px;
+    float: left;
+    padding: 10px 55px 40px;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+input[type=text],
+[type=password] {
+    width: 97.7%;
+    height: 34px;
+    padding-left: 5px;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    color: black;
+    font-size: 16px;
+}
+
+label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lwfb {
+    position: relative;
+    width: 323px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    background: blue;
+}
+
+.lwg {
+    position: relative;
+    width: 323px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    background: white;
+}
+
+.lwe {
+    position: relative;
+    width: 323px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    background: blue;
+}
+
+#btn_container {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    float: left;
+    position: relative;
+}
+
+.btn img {
+    left: 50%;
+    margin-left: -15px;
+    top: 50%;
+    margin-top: -15px;
+    position: absolute;
+}
+
+.btn span {
+    display: inline-block;
+    width: 120px;
+    vertical-align: middle;
+    margin-top: 13px;
+    margin-left: 13px;
+}
+
+button {
+    display: inline-block;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 323px;
+}
+
+day,
+month,
+year {
+    display: inline-block;
+}
+
+day {
+    width: 10px;
+}
+
+#logwfb img {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+#logwg img {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+#login {
+    width: 100%;
+    background: #090446;
+    border: 1px solid #0F799E;
+    font-size: 20px;
+    margin-top: 15px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0px 1px 0px #13506D;
+}
+
+#login:hover {
+    background: linear-gradient(#36caf0 5%, #22abe9 100%);
+}
+
+#register {
+    font-size: 20px;
+    margin-top: 15px;
+    background: #090446;
+    border: 1px solid #0F799E;
+    padding: 7px 35px;
+    color: white;
+    text-shadow: 0px 1px 0px #13506D;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#register:hover {
+    background: linear-gradient(#36caf0 5%, #22abe9 100%);
+}
+
+#SignUp {
+    font-size: 20px;
+    margin-top: 15px;
+    background: #090446;
+    border: 1px solid #0F799E;
+    padding: 7px 35px;
+    color: white;
+    text-shadow: 0px 1px 0px #13506D;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#SignUp:hover {
+    background: linear-gradient(#36caf0 5%, #22abe9 100%);
+}
+
+
+/* Ishan's Styles */
+
+body {
+    background-image: url("./images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ui-page {
+    background: transparent;
+}
+
+.ui-content {
+    background: transparent;
+}
+
+.body-text {
+    color: white;
+    font-size: 25px;
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 25px;
+    width: 20%;
+    align-items: center;
+}
+
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* Add some padding inside the card container */
+
+.container {
+    padding: 2px 16px;
+}
+
+.poi_img {
+    width: 75%;
+}
+
+
+/* Starts */
+
+.checked {
+    color: orange;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
