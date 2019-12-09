@@ -6,14 +6,11 @@
     <title>Registration Form Using jQuery - Demo Preview</title>
     <meta name="robots" content="noindex, nofollow">
     <!-- Include CSS File Here -->
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Include JS File Here -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/registration.js"></script>
 
 </head>
 
 <body>
+
     <div class="container">
         <div class="main">
             <form class="form" method="post" action="#">
@@ -33,69 +30,107 @@
                     <input id="month" name="month" />
                     <input id="year" name="year" />
                 </div>
-                <input type="button" name="SignUp" id="SignUp" value="SignUp" onclick="SignUpUser()">
+                <input type="button" name="SignUp" id="SignUp" value="SignUp" onclick="register()">
             </form>
         </div>
 
-
-        <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
 
         <script>
             // Your web app's Firebase configuration
             var firebaseConfig = {
-                apiKey: "AIzaSyCD1hFhRSbqnWEhOGDimA5UtcbS84_TzYs",
-                authDomain: "treasuretrain.firebaseapp.com",
-                databaseURL: "https://treasuretrain.firebaseio.com",
-                projectId: "treasuretrain",
-                storageBucket: "treasuretrain.appspot.com",
-                messagingSenderId: "954892499615",
-                appId: "1:954892499615:web:de576c12c10b7af2c840aa",
-                measurementId: "G-HNJCX3Y6BM"
+                apiKey: "AIzaSyCiqITMCVsyHKwdbDgFCowNRwLsfLqiYOY",
+                authDomain: "train-cde96.firebaseapp.com",
+                databaseURL: "https://train-cde96.firebaseio.com",
+                projectId: "train-cde96",
+                storageBucket: "train-cde96.appspot.com",
+                messagingSenderId: "45911183152",
+                appId: "1:45911183152:web:b27375f04a3b109b5442f5",
+                measurementId: "G-B29GE7SWEX"
             };
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
+            firebase.database();
+        </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
 
+        <script>
+            function register() {
 
-            function SignUpUser() {
                 var email = document.getElementById("email").value;
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value;
                 var password = document.getElementById("password").value;
 
-                alert(email);
-                alert(password);
+                firebase.auth().createUserWithEmailAndPassword(email, password).then(function(e) {
+                    console.log(e);
+                    // document.cookie = "uid=" + e.user.uid;
+                    firebase.database().ref('users/' + e.user.uid).set({
+                        email: email,
+                        fname: fname,
+                        lname: lname
+                    });
 
-                firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                    /////////////////////// add fav
+                    firebase.database().ref('users/' + e.user.uid + '/favourites').set({
+                        locationId: 'locationId'
+                    });
+
+
+                    alert("success");
+                }).catch(function(error) {
                     // Handle Errors here.
                     var errorCode = error.code;
                     var errorMessage = error.message;
-                    // ...
+                    console.log(errorMessage);
                 });
 
             }
+
+
+
+
+            //////////////////////////////////////////////////////
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function checkCookie() {
+                var user = getCookie("username");
+                if (user != "") {
+                    alert("Welcome again " + user);
+                } else {
+                    user = prompt("Please enter your name:", "");
+                    if (user != "" && user != null) {
+                        setCookie("username", user, 30);
+                    }
+                }
+            }
         </script>
-
-
-
-
-        <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
-
-        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script> -->
-
-        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></script>
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="/__/firebase/7.5.0/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="/__/firebase/7.5.0/firebase-analytics.js"></script>
-
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js"></script>
 
 </body>
 
