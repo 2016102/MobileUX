@@ -177,45 +177,53 @@
                 <div align="center" style="display:inline-flex; ">
 
                     <div class="card">
-                        <a href="./location.html">
+                        <a href="#" onclick="goToLocation('Coco-Cola london-eye')">
                             <img src="./images/Locations/Coco-Cola london-eye.jpg" alt="location" class="poi_img">
                             <div class="container">
-                                <h4><b>Location 1</b></h4>
+                                <h4><b>Coco Cola London Eye</b></h4>
 
                             </div>
                         </a>
                     </div>
 
                     <div class="card">
-                        <img src="./images/Locations/Coco-Cola london-eye.jpg" alt="location" class="poi_img">
-                        <div class="container">
-                            <h4><b>Location 2</b></h4>
+                        <a href="#" onclick="goToLocation('British Museum Great Court')">
+                            <img src="./images/Locations/British-Museum-Great-Court.jpg" alt="location" class="poi_img">
+                            <div class="container">
+                                <h4><b>British Museum Great Court</b></h4>
 
-                        </div>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="card">
-                        <img src="./images/Locations/Coco-Cola london-eye.jpg" alt="location" class="poi_img">
-                        <div class="container">
-                            <h4><b>Location 3</b></h4>
-                        </div>
+                        <a href="#" onclick="goToLocation('Buckingham Palace')">
+                            <img src="./images/Locations/Buckingham_Palace.jpg" alt="location" class="poi_img">
+                            <div class="container">
+                                <h4><b>Buckingham Palace</b></h4>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
                 <div align="center" style="display:inline-flex">
 
                     <div class="card">
-                        <img src="./images/Locations/Coco-Cola london-eye.jpg" alt="location" class="poi_img">
-                        <div class="container">
-                            <h4><b>Location 4</b></h4>
-                        </div>
+                        <a href="#" onclick="goToLocation('Kensington Palace')">
+                            <img src="./images/Locations/kensington-palace.jpg" alt="location" class="poi_img">
+                            <div class="container">
+                                <h4><b>Kensington Palace</b></h4>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="card">
-                        <img src="./images/Locations/Coco-Cola london-eye.jpg" alt="location" class="poi_img">
-                        <div class="container">
-                            <h4><b>Location 5</b></h4>
-                        </div>
+                        <a href="#" onclick="goToLocation('Tower of London')">
+                            <img src="./images/Locations/Tower-of-London.jpg" alt="location" class="poi_img">
+                            <div class="container">
+                                <h4><b>Tower of London</b></h4>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="card">
@@ -372,6 +380,14 @@
             </div>
 
         </div>
+
+
+        <script>
+            function goToLocation(locationName) {
+                window.location = './location.html?locationname=' + locationName;
+
+            }
+        </script>
 
 </body>
 
