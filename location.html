@@ -49,7 +49,7 @@
     </style>
 </head>
 
-<body>
+<body onload="loadData()">
 
 
     <div data-role="page" id="location">
@@ -76,9 +76,9 @@
 
         <div data-role="content" align="center">
 
-            <h3 class="body-text">Location 1</h3>
+            <h3 id="location-name" class="body-text"></h3>
 
-            <img src="./images/Locations/Coco-Cola london-eye.jpg" alt="Coco-Cola london-eye" width="500" height="300">
+            <img id="location_image" src="#" alt="location image" width="500" height="300">
 
             <button type="button" id="Fav">Favourite</button>
 
@@ -95,10 +95,7 @@
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
 
-            <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
-                tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
-                nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+            <p id="location-desc" class="body-text"></p>
 
             <button type="button" class="play_button">Book Tickets</button>
             <button type="button" class="play_button">Play Now</button>
@@ -108,44 +105,47 @@
 
             <h3 class="body-text">Reviews</h3>
 
-            <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+            <div id="reviews">
+                <!-- <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                    eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
 
-            <div align="right">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+                <div align="right">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+
+                <hr>
+
+                <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                    eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+                <div align="right">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+
+                <hr>
+
+                <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                    eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+                <div align="right">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+
+                <hr> -->
+
             </div>
-
-            <hr>
-
-            <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-            <div align="right">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-
-            <hr>
-
-            <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-            <div align="right">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-
-            <hr>
 
             <h3 class="body-text">Leave a Review</h3>
 
@@ -175,16 +175,76 @@
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
-    <script src="js/firebase-init.js"></script>
+    <!-- <script src="js/firebase-init.js"></script> -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCiqITMCVsyHKwdbDgFCowNRwLsfLqiYOY",
+            authDomain: "train-cde96.firebaseapp.com",
+            databaseURL: "https://train-cde96.firebaseio.com",
+            projectId: "train-cde96",
+            storageBucket: "train-cde96.appspot.com",
+            messagingSenderId: "45911183152",
+            appId: "1:45911183152:web:b27375f04a3b109b5442f5",
+            measurementId: "G-B29GE7SWEX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.database();
+    </script>
 
     <script>
         function submitReview() {
             var review = document.getElementById("review-text").value;
-            alert(review);
+            var location = getUrlParams();
 
             firebase.database().ref('reviews/').push({
-                review: review
+                review: review,
+                location_name: location
             });
+
+
+        }
+
+        function loadData() {
+
+            var locationname = getUrlParams();
+
+            document.getElementById("location-name").innerHTML = locationname;
+
+            var ref = firebase.database().ref("reviews");
+            ref.orderByChild("location_name").equalTo(locationname).on("child_added", function(snapshot) {
+
+                var newReview = document.createElement("p");
+                var horizontalLine = document.createElement("hr");
+                var node = document.createTextNode(snapshot.val().review);
+                newReview.appendChild(node);
+
+                var ReviewDiv = document.getElementById("reviews");
+                ReviewDiv.appendChild(newReview);
+                ReviewDiv.appendChild(horizontalLine);
+            });
+
+
+            var ref2 = firebase.database().ref("locations");
+            ref2.orderByChild("name").equalTo(locationname).on("child_added", function(snapshot) {
+
+                var imageurl = snapshot.val().image;
+                var location_desc = snapshot.val().description;
+
+                document.getElementById("location_image").src = imageurl;
+                document.getElementById("location-desc").innerHTML = location_desc;
+            });
+
+        }
+
+        function getUrlParams() {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var locationname = url.searchParams.get("locationname");
+
+            return locationname;
 
         }
     </script>
