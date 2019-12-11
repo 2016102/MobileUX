@@ -80,7 +80,7 @@
 
             <img id="location_image" src="#" alt="location image" width="500" height="300">
 
-            <button type="button" id="Fav">Favourite</button>
+            <button type="button" id="Fav" onclick="addToFavourites()">Favourite</button>
 
 
             </span>
@@ -247,7 +247,21 @@
             return locationname;
 
         }
+
+        function addToFavourites() {
+            var favLocation = getUrlParams();
+
+            var coockie = getCookie("uid");
+
+            firebase.database().ref('users/' + coockie + '/favourites').push({
+                locationId: favLocation
+            });
+
+            alert("Location added to Favourites");
+        }
     </script>
+
+    <script src="js/CookieFunctions.js"></script>
 </body>
 
 </html>

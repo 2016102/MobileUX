@@ -67,7 +67,12 @@
 
             firebase.auth().signInWithEmailAndPassword(email, password).then(function(e) {
 
+                var uid = (e.user.uid);
+
+                setCookie("uid", uid, 1);
+                setCookie("email", email, 1);
                 window.location.href = "./GamePage1.html";
+
 
             }).catch(function(error) {
                 // Handle Errors here.
@@ -77,6 +82,8 @@
             });
         }
     </script>
+
+    <script src="js/CookieFunctions.js"></script>
 
 
 </body>
