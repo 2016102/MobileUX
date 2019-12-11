@@ -46,6 +46,14 @@
             color: white;
             font-size: 25px;
         }
+        
+        .a {
+            color: yellow;
+        }
+        
+        #rating span.active {
+            color: orange;
+        }
     </style>
 </head>
 
@@ -105,62 +113,26 @@
 
             <h3 class="body-text">Reviews</h3>
 
+            <br>
+            <br>
+
+
             <div id="reviews">
-                <!-- <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                    eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-                <div align="right">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-
-                <hr>
-
-                <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                    eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-                <div align="right">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-
-                <hr>
-
-                <p class="body-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                    eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-                <div align="right">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-
-                <hr> -->
-
+                <!-- reviews goes here -->
             </div>
+
+            <br>
+            <br>
 
             <h3 class="body-text">Leave a Review</h3>
 
-            <!-- <div class="rate">
-                <input type="radio" id="star5" name="rate" value="5" />
-                <label for="star5" title="text">5 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
-                <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
-                <label for="star3" title="text">3 stars</label>
-                <input type="radio" id="star2" name="rate" value="2" />
-                <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star1" name="rate" value="1" />
-                <label for="star1" title="text">1 star</label>
-            </div> -->
+            <div id='rating'>
+                <span class="fa fa-star" id="1" value='1'></span>
+                <span class="fa fa-star" id="2" value='1'></span>
+                <span class="fa fa-star" id="3" value='1'></span>
+                <span class="fa fa-star" id="4" value='1'></span>
+                <span class="fa fa-star" id="5" value='1'></span>
+            </div>
 
             <textarea id="review-text" rows="6" cols="70" placeholder="Leave a review"></textarea>
 
@@ -195,15 +167,35 @@
     </script>
 
     <script>
+        // Get given rating
+        var rating;
+
+        document.querySelector('#rating').addEventListener('click', function(e) {
+            if (e.target.nodeName === 'SPAN') {
+                var currentSibling = e.target;
+
+                currentSibling.classList.add('checked');
+                while ((currentSibling = currentSibling.previousElementSibling)) {
+                    currentSibling.classList.add('checked');
+                }
+
+                rating = e.target.id;
+            }
+        });
+
         function submitReview() {
+            // Get Review Text
             var review = document.getElementById("review-text").value;
             var location = getUrlParams();
 
+            //add rating and review to DB
             firebase.database().ref('reviews/').push({
                 review: review,
-                location_name: location
+                location_name: location,
+                rating: rating
             });
 
+            review.innerHTML = " ";
 
         }
 
@@ -222,8 +214,28 @@
                 newReview.appendChild(node);
 
                 var ReviewDiv = document.getElementById("reviews");
+
+
+                /// create rating stars
+                var numOfStars = snapshot.val().rating;
+
+                var i;
+                for (i = 0; i < 5; i++) {
+                    var star = document.createElement("span");
+
+                    if (i < numOfStars) {
+                        star.setAttribute("class", "fa fa-star checked");
+                        star.style.float = "right";
+                    } else {
+                        star.setAttribute("class", "fa fa-star");
+                        star.style.float = "right";
+                    }
+
+                    ReviewDiv.appendChild(star);
+                }
                 ReviewDiv.appendChild(newReview);
                 ReviewDiv.appendChild(horizontalLine);
+
             });
 
 
