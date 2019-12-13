@@ -1,35 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Login</title>
-<meta name="robots" content="noindex, nofollow">
-<!-- Include CSS File Here -->
-<link rel="stylesheet" href="css/style.css"/>
-<!-- Include CSS File Here -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
+    <title>Login</title>
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Include CSS File Here -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Include CSS File Here -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 </head>
+
 <body>
-<div class="container">
-<div class="main">
-<form class="form" method="post" action="#">
-<h2>Login</h2>
-<button class="lwfb">               
-    <div id="btn_container"><img  src="images/fb.png" width="30" height="30"/></div>
-    <span>Login With Facebook</span>
-</button>
-<button class="lwg">               
-    <div id="btn_container"><img  src="images/google.png" width="30" height="30"/></div>
-    <span>Login With Google</span>
-</button>
-<center><p>or</p></center>
-<input type="text" name="demail" id="email" placeholder="Email">
-<input type="password" name="password" id="password" placeholder="Password">
-<input type="button" name="login" id="login" value="Login">
-</form>
-<center><p>Forgot Password</p></center>
-<center><p>Don't have an account?</p>  <a href="./signup.html"<p>Sign Up</p> </a></center>
-</div>
-</div>
+    <div class="container">
+        <div class="main">
+            <form class="form" method="post" action="#">
+                <h2>Login</h2>
+                <button class="lwfb">
+                    <div id="btn_container"><img src="images/fb.png" width="30" height="30" /></div>
+                    <span>Login With Facebook</span>
+                </button>
+                <button class="lwg">
+                    <div id="btn_container"><img src="images/google.png" width="30" height="30" /></div>
+                    <span>Login With Google</span>
+                </button>
+                <center>
+                    <p>or</p>
+                </center>
+                <input type="text" name="demail" id="email" placeholder="Email">
+                <input type="password" name="password" id="password" placeholder="Password">
+
+                <input type="button" name="login" id="login" value="Login" onclick="signup()">
+            </form>
+            <center>
+                <p>Forgot Password</p>
+            </center>
+            <center>
+                <p>Don't have an account?</p> <a href="./signup.html" <p>Sign Up</p> </a>
+            </center>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCiqITMCVsyHKwdbDgFCowNRwLsfLqiYOY",
+            authDomain: "train-cde96.firebaseapp.com",
+            databaseURL: "https://train-cde96.firebaseio.com",
+            projectId: "train-cde96",
+            storageBucket: "train-cde96.appspot.com",
+            messagingSenderId: "45911183152",
+            appId: "1:45911183152:web:b27375f04a3b109b5442f5",
+            measurementId: "G-B29GE7SWEX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.database();
+    </script>
+
+    <script>
+        function signup() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password).then(function(e) {
+
+                window.location.href = "./GamePage1.html";
+
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+            });
+        }
+    </script>
+
+
 </body>
+
 </html>
