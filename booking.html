@@ -138,36 +138,51 @@
         <div align="center" data-role="content" class="form">
             <form action="" id="bookingForm">
                 From:<br>
-                <select id="from" name="from">
-          <option value="London">London</option>
-          <option value="Birmingham">Birmingham</option>
-          <option value="Bristol">Bristol</option>
-          <option value="Canterbury">Canterbury</option>
-        </select>
+                <select id="from" name="from" required>
+                    <option value="London">London</option>
+                    <option value="Birmingham">Birmingham</option>
+                    <option value="Bristol">Bristol</option>
+                    <option value="Canterbury">Canterbury</option>
+                </select>
                 <br> To:
                 <br>
-                <select id="to" name="to">
-          <option value="London">London</option>
-          <option value="Birmingham">Birmingham</option>
-          <option value="Bristol">Bristol</option>
-          <option value="Canterbury">Canterbury</option>
-        </select>
+                <select id="to" name="to" required>
+                    <option value="London">London</option>
+                    <option value="Birmingham">Birmingham</option>
+                    <option value="Bristol">Bristol</option>
+                    <option value="Canterbury">Canterbury</option>
+                </select>
                 <br> Date:
                 <br>
 
-                <input id="date" align="center" value="Date of Trip" type="date" name="date">
+                <input id="date" align="center" value="Date of Trip" type="date" name="date" required>
                 <br> Class:
                 <br>
-                <select name="class">
-          <option value="firstclass">First Class</option>
-          <option value="secondclass">Second Class</option>
-          <option value="thirdclass">Third Class</option>
-        </select> <br> Number of Tickets:<br>
+                <select name="class" required>
+                    <option value="firstclass">First Class</option>
+                    <option value="secondclass">Second Class</option>
+                    <option value="thirdclass">Third Class</option>
+                </select> <br> Number of Tickets:<br>
                 <select name="numOfTickets">
-          <option value="one">01</option>
-          <option value="two">02</option>
-          <option value="three">03</option>
-        </select>
+                    <option value="one">01</option>
+                    <option value="two">02</option>
+                    <option value="three">03</option>
+                    <option value="four">04</option>
+                    <option value="five">05</option>
+                    <option value="six">06</option>
+                    <option value="seven">07</option>
+                    <option value="eight">08</option>
+                    <option value="nine">09</option>
+                    <option value="ten">10</option>
+                </select>
+
+                <label for="price-per-ticket">Price Per Ticket</label>
+                <input type="text" name="price-per-ticket" id="price-per-ticket" readonly>
+
+                <label for="price"> Total Price</label>
+                <input type="text" name="price" id="price" readonly>
+
+
                 <br><br>
 
                 <a href="#popupLogin" onclick="loadPopup()" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" data-position-to="window">Book Now</a>
@@ -182,8 +197,7 @@
 
                             <p id="confirmation-msg"> test </p>
 
-                            <button id="customButton" type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Proceed to
-                Payment</button>
+                            <button id="customButton" type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Proceed to Payment</button>
                         </div>
                     </form>
                 </div>
@@ -245,7 +259,8 @@
 
         <script src="https://www.google-analytics.com/analytics.js" async></script>
 
-        <script src="https://checkout.stripe.com/checkout.js"></script>
+        <script src="https://checkout.strip
+        e.com/checkout.js"></script>
 
         <script type="text/javascript">
             jQuery(function($) {
@@ -273,8 +288,6 @@
                 });
             });
         </script>
-
-
 
     </div>
 </body>
