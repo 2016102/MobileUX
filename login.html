@@ -16,14 +16,15 @@
         <div class="main">
             <form class="form" method="post" action="#">
                 <h2>Login</h2>
-                <button class="lwfb">
+                <button type="button" class="lwfb" onclick="loginWithFacebook()">
                     <div id="btn_container"><img src="images/fb.png" width="30" height="30" /></div>
                     <span>Login With Facebook</span>
                 </button>
-                <button class="lwg">
+                <button type="button" class="lwg" onclick="loginWithGoogle()">
                     <div id="btn_container"><img src="images/google.png" width="30" height="30" /></div>
                     <span>Login With Google</span>
                 </button>
+
                 <center>
                     <p>or</p>
                 </center>
@@ -80,6 +81,16 @@
                 var errorMessage = error.message;
                 // ...
             });
+        }
+
+        function loginWithFacebook() {
+            var provider = new firebase.auth.FacebookAuthProvider();
+            firebase.auth().signInWithRedirect(provider);
+        }
+
+        function loginWithGoogle() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider);
         }
     </script>
 

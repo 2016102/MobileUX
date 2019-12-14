@@ -2,397 +2,281 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <title>Booking</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Booking</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-<!--&lt;!&ndash;  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">&ndash;&gt;-->
-<!--&lt;!&ndash;  <meta name="apple-mobile-web-app-capable" content="yes">&ndash;&gt;-->
-<!--&lt;!&ndash;  <meta name="apple-mobile-web-app-status-bar-style" content="black">&ndash;&gt;-->
+    <!--  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <!--&lt;!&ndash;  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">&ndash;&gt;-->
+    <!--&lt;!&ndash;  <meta name="apple-mobile-web-app-capable" content="yes">&ndash;&gt;-->
+    <!--&lt;!&ndash;  <meta name="apple-mobile-web-app-status-bar-style" content="black">&ndash;&gt;-->
 
-<!--  <link rel="manifest" href="site.webmanifest">-->
-<!--  <link rel="apple-touch-icon" href="icon.png">-->
-<!--  &lt;!&ndash; Place favicon.ico in the root directory &ndash;&gt;-->
+    <!--  <link rel="manifest" href="site.webmanifest">-->
+    <!--  <link rel="apple-touch-icon" href="icon.png">-->
+    <!--  &lt;!&ndash; Place favicon.ico in the root directory &ndash;&gt;-->
 
-<!--  <link rel="stylesheet" href="css/normalize.css">-->
-<!--  <link rel="stylesheet" href="css/main.css">-->
+    <!--  <link rel="stylesheet" href="css/normalize.css">-->
+    <!--  <link rel="stylesheet" href="css/main.css">-->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-  <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#fafafa">
 </head>
 <style>
-  [data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
-  /*.form{*/
-  /*  border-radius: 50px;*/
-  /*  background-color: #f2f2f2;*/
-  /*  padding: 200px;*/
-  /*  align-content: center;*/
-  /*}*/
-  body {
-      background-image: url("./images/bg.png ");
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-  /*!*.body{*!*/
-  /*!*  !*border: 2px solid black;*!*!*/
-  /*!*  padding: 200px;*!*/
-  /*!*  !*background: url(/img/bg.png);*!*!*/
-  /*!*  !*background-repeat: no-repeat;*!*!*/
-  /*!*  !*background-size: auto;*!*!*/
-  /*!*  background: url(/img/bg.png) no-repeat center center fixed;*!*/
-  /*!*  -webkit-background-size: cover;*!*/
-  /*!*  -moz-background-size: cover;*!*/
-  /*!*  -o-background-size: cover;*!*/
-  /*!*  background-size: cover;*!*/
-
-  /*!*}*!*/
-
-  /* input[type=text], select {*/
-  /*   width: 100%;*/
-  /*   padding: 12px 20px;*/
-  /*   margin: 8px 0;*/
-  /*   display: inline-block;*/
-  /*   border: 1px solid #ccc;*/
-  /*   border-radius: 4px;*/
-  /*   box-sizing: border-box;*/
-  /* }*/
-
-  input[type=submit] {
-    /*width: 100px;*/
-
-    background-color: #ffa630;
-    /*-moz-backface-visibility: visible;*/
-    color: black;
-    /*padding: 14px 20px;*/
-    /*margin: 8px 0;*/
-    /*border: none;*/
-    /*border-radius: 4px;*/
-    /*cursor: pointer;*/
-  }
-
-  /*input[type=submit]:hover {*/
-  /*  background-color: #45a049;*/
-  /*}*/
-
-  /*div {*/
-  /*  border-radius: 5px;*/
-  /*  background-color: #f2f2f2;*/
-  /*  padding: 20px;*/
-  /*}*/
-
-  .ui-page {
-    background: transparent;
-  }
-
-  .ui-content {
-    background: transparent;
-  }
-  body {
-    background-image: url("./images/bg.png ");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  /*button*/
-
+    [data-role=footer] {
+        bottom: 0;
+        position: absolute !important;
+        top: auto !important;
+        width: 100%;
+    }
+    /*.form{*/
+    /*  border-radius: 50px;*/
+    /*  background-color: #f2f2f2;*/
+    /*  padding: 200px;*/
+    /*  align-content: center;*/
+    /*}*/
+    
+    body {
+        background-image: url("./images/bg.png ");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    input[type=submit] {
+        /*width: 100px;*/
+        background-color: #ffa630;
+        /*-moz-backface-visibility: visible;*/
+        color: black;
+        /*padding: 14px 20px;*/
+        /*margin: 8px 0;*/
+        /*border: none;*/
+        /*border-radius: 4px;*/
+        /*cursor: pointer;*/
+    }
+    /*input[type=submit]:hover {*/
+    /*  background-color: #45a049;*/
+    /*}*/
+    /*div {*/
+    /*  border-radius: 5px;*/
+    /*  background-color: #f2f2f2;*/
+    /*  padding: 20px;*/
+    /*}*/
+    
+    .ui-page {
+        background: transparent;
+    }
+    
+    .ui-content {
+        background: transparent;
+    }
+    
+    body {
+        background-image: url("./images/bg.png ");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*button*/
+    /* footer by prasadee */
+    
+    .left {
+        margin-top: 50px;
+        float: left;
+        width: 50%;
+    }
+    
+    .left img {
+        float: left;
+        margin-right: 40px;
+    }
+    
+    .left p {
+        margin-bottom: 50px;
+    }
+    
+    .right {
+        float: right;
+        width: 50%;
+    }
+    
+    .right .div3>p {
+        float: left;
+        width: 20%;
+    }
 </style>
+
 <body>
 
 
-<!--<nav class="navbar navbar-inverse">-->
-<!--  <div class="container-fluid">-->
-<!--    <div class="navbar-header">-->
-<!--&lt;!&ndash;      <a class="navbar-brand" href="#" >Treasure train</a>&ndash;&gt;-->
-<!--      <img src="/img/logo.png" alt="Treasure train">-->
+    <div class="body" data-role="page">
+        <div align="center" data-role="header">
+            <div data-role="header">
 
-<!--    </div>-->
-<!--    <ul class="nav navbar-nav">-->
-<!--      <li class="active"><a href="#">Home</a></li>-->
-<!--      <li><a href="booking.html">Booking</a></li>-->
-<!--      <li><a href="account.html">Account</a></li>-->
-<!--    </ul>-->
-<!--    <button class="btn btn-danger navbar-btn">Login</button>-->
-<!--  </div>-->
-<!--</nav>-->
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+                <img src="./images/logo.png" alt="Treasure Train Logo" width="200" height="200">
 
-  <!-- Add your site or application content here -->
-<!--  <p>Hello world! This is HTML5 Boilerplate.</p>-->
-<div class="body" data-role="page">
-<div align="center" data-role="header">
-  <div data-role="header">
+                <div data-demo-html="true">
 
-    <img src="./images/logo.png" alt="Treasure Train Logo" width="200" height="200">
-
-    <div data-demo-html="true">
-
-      <div data-role="navbar" data-grid="c">
-        <ul>
-          <li><a href="#" class="ui-btn-active">Home</a></li>
-          <li><a href="#">Book Tickets</a></li>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="./login.html">Play Game</a></li>
-        </ul>
-      </div><!-- /navbar -->
-    </div>
-    <!--/demo-html -->
-    <h1>Book Ticket</h1>
-  </div></div>
-
-<div align="center" data-role="content" class="form">
-  <form action=""  id="bookingForm">
-  From:<br>
-    <select name="from">
-      <option value="colombo">Colmbo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
-    </select>
-  <br>
-    To:<br>
-    <select name="to">
-      <option value="colombo">Colmbo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
-    </select>
-    <br>
-    Date:<br>
-=
-    <input align="center"  value="Date of Trip" type="date" name="date">
-    <br>
-    Class:<br>
-    <select name="class">
-      <option value="firstclass">First Class</option>
-      <option value="secondclass">Second Class</option>
-      <option value="thirdclass">Third Class</option>
-    </select>    <br>
-
-    Number of Tickets:<br>
-    <select name="numOfTickets">
-      <option value="one">01</option>
-      <option value="two">02</option>
-      <option value="three">03</option>
-    </select>
-  <br><br>
-
-  <input type="submit" class="ui-btn ui-btn-inline" value="Book Now"   >
-    <br>
-    <a href="#popupBasic" data-rel="popup">Open Popup</a>
-    <br>
-    <div  align="centre" class="ui-block-b">
-<!--      <center>-->
-<!--        <a data-position-to="window" data-rel="popup" data-role="button" data-theme="a" href="#"-->
-<!--                               id="submit_booking">Book Now</a>-->
-<!--      </center>-->
-    </div>
-
-
-
-  </form>
-
-</div>
-  <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all" data-dismissible="false">
-    <div data-role="header" data-theme="a" class="ui-corner-top">
-      <h1>Conferma</h1>
-    </div>
-  <div class="content-secondary">
-    <div data-role="popup" id="popupDiv" class="ui-content"
-         style="max-width: 340px;">
-      <span id="dialog_title_span">Thank You</span>
-      <p>
-        Booking details are correct ?
-      </p>
-      <a id="confirmButton" data-role="button" data-theme="b" data-icon="check" data-inline="true"
-         href="Default.aspx" data-mini="true">DONE</a>
-    </div>
-  </div>
-  <div data-role="popup" id="popupBasic">
-    <p>This is a completely basic popup, no options set.</p>
-  </div>
-      <div data-role="footer" data-position="fixed">
-
-        <!-- Footer -->
-        <footer class="page-footer font-small stylish-color-dark pt-4">
-
-          <!-- Footer Links -->
-          <div class="container text-center text-md-left">
-
-            <!-- Grid row -->
-            <div class="row">
-
-              <!-- Grid column -->
-              <div class="col-md-4 mx-auto">
-
-                <!-- Content -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-                  amet,
-                  consectetur
-                  adipisicing elit.</p>
-
-              </div>
-              <!-- Grid column -->
-
-              <hr class="clearfix w-100 d-md-none">
-
-              <!-- Grid column -->
-              <div class="col-md-2 mx-auto">
-
-                <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#!">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 4</a>
-                  </li>
-                </ul>
-
-              </div>
-              <!-- Grid column -->
-
-              <hr class="clearfix w-100 d-md-none">
-
-              <!-- Grid column -->
-              <div class="col-md-2 mx-auto">
-
-                <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#!">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 4</a>
-                  </li>
-                </ul>
-
-              </div>
-              <!-- Grid column -->
-
-              <hr class="clearfix w-100 d-md-none">
-
-              <!-- Grid column -->
-              <div class="col-md-2 mx-auto">
-
-                <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#!">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 4</a>
-                  </li>
-                </ul>
-
-              </div>
-              <!-- Grid column -->
-
+                    <div data-role="navbar" data-grid="c">
+                        <ul>
+                            <li><a href="#" class="ui-btn-active">Home</a></li>
+                            <li><a href="#">Book Tickets</a></li>
+                            <li><a href="/aboutus.html">About Us</a></li>
+                            <li><a href="./login.html">Play Game</a></li>
+                        </ul>
+                    </div>
+                    <!-- /navbar -->
+                </div>
+                <!--/demo-html -->
+                <h1>Book Ticket</h1>
             </div>
-            <!-- Grid row -->
+        </div>
 
-          </div>
-          <!-- Footer Links -->
+        <div align="center" data-role="content" class="form">
+            <form action="" id="bookingForm">
+                From:<br>
+                <select id="from" name="from">
+          <option value="London">London</option>
+          <option value="Birmingham">Birmingham</option>
+          <option value="Bristol">Bristol</option>
+          <option value="Canterbury">Canterbury</option>
+        </select>
+                <br> To:
+                <br>
+                <select id="to" name="to">
+          <option value="London">London</option>
+          <option value="Birmingham">Birmingham</option>
+          <option value="Bristol">Bristol</option>
+          <option value="Canterbury">Canterbury</option>
+        </select>
+                <br> Date:
+                <br>
+
+                <input id="date" align="center" value="Date of Trip" type="date" name="date">
+                <br> Class:
+                <br>
+                <select name="class">
+          <option value="firstclass">First Class</option>
+          <option value="secondclass">Second Class</option>
+          <option value="thirdclass">Third Class</option>
+        </select> <br> Number of Tickets:<br>
+                <select name="numOfTickets">
+          <option value="one">01</option>
+          <option value="two">02</option>
+          <option value="three">03</option>
+        </select>
+                <br><br>
+
+                <a href="#popupLogin" onclick="loadPopup()" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" data-position-to="window">Book Now</a>
+
+                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+
+                    <form>
+
+                        <div style="padding:10px 20px;">
+
+                            <h3>Confirm your Booking</h3>
+
+                            <p id="confirmation-msg"> test </p>
+
+                            <button id="customButton" type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Proceed to
+                Payment</button>
+                        </div>
+                    </form>
+                </div>
+
+            </form>
+
+            <!-- <div data-role="footer">
+                <div class="footer1">
+                    <div class="left">
+                        <div id="div1">
+                            <img src="images/placeholder.png" height="25" width="25">
+                            <p>Galle Road Dehiwala</p>
+                            <img src="images/telephone.png" height="25" width="25">
+                            <p>0771234567</p>
+                            <img src="images/envelope.png" height="25" width="25">
+                            <p>Treasuretrain@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div id="div2">
+                            <p>About Us</p>
+                            <p>We are a startup that aims to provide you with a smooth and fun process to book tickets and visit places in London. Book tickets, Play Game, Review Places all in one platform. Connect with us on any platform. Visit us, Call
+                                us or email us </p>
+                        </div>
+                        <div class="div3">
+                            <p><img src="images/fb.png" height="30" width="30"></p>
+                            <p><img src="images/twitter.png" height="30" width="30"></p>
+                            <p><img src="images/linkedin.png" height="30" width="30"></p>
+                            <p><img src="images/github.png" height="30" width="30"></p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <script>
+                function loadPopup() {
+                    var FromLocation = document.getElementById('from').value;
+                    var ToLocation = document.getElementById('to').value;
+                    var date = document.getElementById('date').value
+
+                    var popUpText = "Confirm your booking from " + FromLocation + " to " + ToLocation + " on " + date;
+
+                    document.getElementById("confirmation-msg").innerHTML = popUpText;
+
+                }
+            </script>
+
+        </div>
+        <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+        </script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+
+        <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+
+        <script type="text/javascript">
+            jQuery(function($) {
+                var $form = $('#bookingForm');
+                var handler = StripeCheckout.configure({
+                    key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                    token: function(token) {
+                        if (token.id) {
+                            $("#thankyouPayment").html("Thank you")
+                        }
+                    }
+                })
+
+                $('#customButton').on('click', function(e) {
+                    handler.open({
+                        name: 'Treasure Train',
+                        currency: 'LKR',
+                        description: $('#item_name').val(),
+                        amount: $('#item_value').val() * 100
+                    });
+
+                    $(window).on('popstate', function() {
+                        handler.close();
+                    });
+                });
+            });
+        </script>
 
 
-          <!-- Social buttons -->
-          <ul class="list-unstyled list-inline text-center">
-            <li class="list-inline-item">
-              <a class="btn-floating btn-fb mx-1">
-                <i class="fab fa-facebook-f"> </i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-tw mx-1">
-                <i class="fab fa-twitter"> </i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-gplus mx-1">
-                <i class="fab fa-google-plus-g"> </i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-li mx-1">
-                <i class="fab fa-linkedin-in"> </i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-dribbble mx-1">
-                <i class="fab fa-dribbble"> </i>
-              </a>
-            </li>
-          </ul>
-          <!-- Social buttons -->
 
-        </footer>
-        <!-- Footer -->
-      </div>
-</div>
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-
-
-    function onSuccess() {
-        setTimeout(function(){
-            $('#popupDiv').popup("open");
-        },100);    }
-
-    function onFailure(error) {
-        alert(error);
-    }
-    $(document).on('click', 'submit', function () {
-        $('#popupDiv').popup();
-        $('#popupDiv').popup('open');
-    })
-
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-
-
-
-</div>
+    </div>
 </body>
 
 </html>
