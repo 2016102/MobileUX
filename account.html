@@ -104,9 +104,9 @@
             <button class="accordion">Profile Details</button>
             <div class="panel">
                 <p>Username</p>
-                <input type="text" name="username" placeholder="Username" readonly>
+                <input id="username" type="text" name="username" placeholder="Username" readonly>
                 <p>Email</p>
-                <input type="text" name="email" placeholder="Email" readonly>
+                <input id="email" type="text" name="email" placeholder="Email" readonly>
             </div>
 
             <button class="accordion">Change Password</button>
@@ -318,10 +318,17 @@
         function onLoad() {
             var coockie = getCookie("uid");
             var favouriteList = document.getElementById("favourites");
+            var username = document.getElementById("username");
+            var email = document.getElementById("email");
 
             return firebase.database().ref('/users/' + coockie).once('value').then(function(snapshot) {
 
+
+                username.value = snapshot.val().fname + " " + snapshot.val().lname;
+                email.value = snapshot.val().email
+
                 snapshot.forEach((child) => {
+
                     child.forEach((child2) => {
 
                         var newItem = document.createElement("p");
