@@ -14,26 +14,17 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <!-- <div data-role="page"> -->
 
-    <!-- header -->
-    <!-- <div data-role="header"></div> -->
-
-    <!-- content -->
-    <!-- <div data-role="content"> -->
-
-
+    <div style="position: fixed;top:1vh;right:1vw;  text-align: center; z-index: 1;color: black;">
+        <h1> <a href="./GamePageQR.html" class="button">QR Scanner</a></h1>
+    </div>
 
     <a-scene a-scene embedded arjs='sourceType: webcam; trackingMethod: best;
      sourceWidth:1280; sourceHeight:960; displayWidth: 1080; displayHeight: 960;'>
-        <!-- create your content here. just a box for now -->
 
-        <!-- <a-text position="0 1 1" rotation=" 0 90 270" value="Challenge 1"></a-text>
-        <a-text position="0 1 2" rotation=" 0 90 270" value="Challenge 2 "></a-text>
-        <a-text position="0 1 3" rotation=" 0 90 270" value="Challenge 3 "></a-text> -->
+        <a-text id="challenge1" position="0 1 1" rotation=" 0 90 270" value="Scan the QR code behind the image to get points" my-test-component></a-text>
+
         <a-image position="0 0 0" rotation=" 0 90 270" src="./images/arrow.png "></a-image>
-        <a-link scale="1 1 -1" position="0 1 1" rotation=" 0 90 270" href="www.google.com" title="Click to Scan QR" src="www.google.com"></a-link>
-
 
 
         <!-- <a-animation attribute="rotation " dur="3000 " to="0 360 0 " repeat="indefinite ">
@@ -52,11 +43,35 @@
     </a-scene>
 
 
+
     <!-- </div> -->
 
     <!-- footer -->
     <!-- <div data-role="footer "></div> -->
     <!-- </div> -->
+
+    <script>
+        AFRAME.registerComponent('my-test-component', {
+            tick: function() {
+                var el = this.el;
+                el.setAttribute("value", "other text");
+            }
+        });
+
+        function onLoad() {
+            var location = getUrlParams();
+            alert(location);
+        }
+
+        function getUrlParams() {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var locationname = url.searchParams.get("locationname");
+
+            return locationname;
+
+        }
+    </script>
 
 </body>
 

@@ -112,11 +112,13 @@
             <button class="accordion">Change Password</button>
             <div class="panel">
                 <p>Enter Old Password</p>
-                <input type="password" name="oldpass" placeholder="Old Password">
+                <input id="oldpass" type="password" name="oldpass" placeholder="Old Password">
                 <p>Enter New Password</p>
-                <input type="password" name="newpass" placeholder="New Password">
+                <input id="newpass" type="password" name="newpass" placeholder="New Password">
                 <p>Confirm New Password</p>
-                <input type="password" name="confirmnewpass" placeholder="Confirm Password">
+                <input id="confirmnewpass" type="password" name="confirmnewpass" placeholder="Confirm Password">
+
+                <input id="updatePass" onclick="updatePassword()" type="submit" value="Update Password">
             </div>
 
             <button class="accordion">Favourites</button>
@@ -370,6 +372,54 @@
                 message => alert("mail sent successfully")
             );
         }
+
+        function updatePassword() {
+            var user = firebase.auth().currentUser;
+            var providedPassword = document.getElementById("oldpass").value;
+
+            var credential = firebase.auth.EmailAuthProvider.credential(
+                firebase.auth().currentUser.email,
+                providedPassword
+            );
+            console.log('old pass' + credential);
+
+            var newPassword = document.getElementById("newpass").value;
+            var confirmnewpass = document.getElementById("confirmnewpass").value;
+
+            alert(newPassword);
+            if (newPassword = confirmnewpass) {
+                user.updatePassword(newPassword).then(function() {
+                    alert("Password Updated Successfully");
+                }).catch(function(error) {
+                    // An error happened.
+                });
+
+            } else {
+                alert("Passwords does not match");
+            }
+
+            console.log(user);
+
+        }
+
+        // changePassword = (currentPassword, newPassword) => {
+        //     var oldpass = document.getElementById("oldpass");
+        //     var newPassword = document.getElementById("newpass").value;
+        //     var confirmnewpass = document.getElementById("confirmnewpass").value;
+
+        //     var user = firebase.auth().currentUser;
+
+        //     user.reauthenticate(oldpass).then(() => {
+        //         var user = firebase.auth().currentUser;
+        //         user.updatePassword(newPassword).then(() => {
+        //             console.log("Password updated!");
+        //         }).catch((error) => {
+        //             console.log(error);
+        //         });
+        //     }).catch((error) => {
+        //         console.log(error);
+        //     });
+        // }
     </script>
 
     <script src="js/CookieFunctions.js"></script>

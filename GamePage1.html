@@ -67,9 +67,15 @@
     <script>
         function initMap() {
             // Coordinates of locations
+
             var london = {
                 lat: 51.5074,
                 lng: 0.1278
+            };
+
+            var MadameTussauds = {
+                lat: 51.5229,
+                lng: -0.1548
             };
 
             var britishMuseumCourt = {
@@ -109,7 +115,7 @@
             var buckinghamPalaceInfo = document.createElement('div');
             var kensingtonPalaceInfo = document.createElement('div');
             var TowerOfLondonInfo = document.createElement('div');
-            var LondonInfo = document.createElement('div');
+            var MadameTussaudsInfo = document.createElement('div');
 
             var strong = document.createElement('strong');
             var strong1 = document.createElement('strong');
@@ -123,21 +129,21 @@
             strong2.textContent = "Buckingham Palace"
             strong3.textContent = "Keniston Palace"
             strong4.textContent = "Tower of London"
-            strong5.textContent = "London"
+            strong5.textContent = "Madame Tussauds"
 
             britishMuseumCourtInfo.appendChild(strong);
             cocaColaLondonEyeInfo.appendChild(strong1);
             buckinghamPalaceInfo.appendChild(strong2);
             kensingtonPalaceInfo.appendChild(strong3);
             TowerOfLondonInfo.appendChild(strong4);
-            LondonInfo.appendChild(strong5);
+            MadameTussaudsInfo.appendChild(strong5);
 
             britishMuseumCourtInfo.appendChild(document.createElement('br'));
             cocaColaLondonEyeInfo.appendChild(document.createElement('br'));
             buckinghamPalaceInfo.appendChild(document.createElement('br'));
             kensingtonPalaceInfo.appendChild(document.createElement('br'));
             TowerOfLondonInfo.appendChild(document.createElement('br'));
-            LondonInfo.appendChild(document.createElement('br'));
+            MadameTussaudsInfo.appendChild(document.createElement('br'));
 
             var text = document.createElement('text');
             var text1 = document.createElement('text');
@@ -151,21 +157,21 @@
             text2.textContent = 'Westminster, London SW1A 1AA, United Kingdom'
             text3.textContent = 'Kensington Gardens, Kensington, London W8 4PX, United Kingdom'
             text4.textContent = 'St Katharines & Wapping, London EC3N 4AB, United Kingdom'
-            text5.textContent = 'london'
+            text5.textContent = 'Marylebone Rd, Marylebone, London NW1 5LR, United Kingdom'
 
             britishMuseumCourtInfo.appendChild(text);
             cocaColaLondonEyeInfo.appendChild(text1);
             buckinghamPalaceInfo.appendChild(text2);
             kensingtonPalaceInfo.appendChild(text3);
             TowerOfLondonInfo.appendChild(text4);
-            LondonInfo.appendChild(text5);
+            MadameTussaudsInfo.appendChild(text5);
 
             britishMuseumCourtInfo.appendChild(document.createElement('br'));
             cocaColaLondonEyeInfo.appendChild(document.createElement('br'));
             buckinghamPalaceInfo.appendChild(document.createElement('br'));
             kensingtonPalaceInfo.appendChild(document.createElement('br'));
             TowerOfLondonInfo.appendChild(document.createElement('br'));
-            LondonInfo.appendChild(document.createElement('br'));
+            MadameTussaudsInfo.appendChild(document.createElement('br'));
 
             var btn = document.createElement("BUTTON");
             var btn1 = document.createElement("BUTTON");
@@ -186,30 +192,30 @@
             buckinghamPalaceInfo.appendChild(btn2);
             kensingtonPalaceInfo.appendChild(btn3);
             TowerOfLondonInfo.appendChild(btn4);
-            LondonInfo.appendChild(btn5);
+            MadameTussaudsInfo.appendChild(btn5);
 
             btn.onclick = function() {
-                alert('here be dragons');
+                window.location = "./GamePageAR.html?locationname=britishMuseumCourt"
                 return false;
             };
             btn1.onclick = function() {
-                alert('here be dragons');
+                window.location = "./GamePageAR.html?locationname=cocaColaLondonEye"
                 return false;
             };
             btn2.onclick = function() {
-                alert('here be dragons');
+                window.location = "./GamePageAR.html?locationname=buckinghamPalace"
                 return false;
             };
             btn3.onclick = function() {
-                alert('here be dragons');
+                window.location = "./GamePageAR.html?locationname=kensingtonPalace"
                 return false;
             };
             btn4.onclick = function() {
-                alert('here be dragons');
+                window.location = "./GamePageAR.html?locationname=TowerOfLondon"
                 return false;
             };
             btn5.onclick = function() {
-                alert('here be dragons');
+                window.location = "./GamePageAR.html?locationname=MadameTussauds"
                 return false;
             };
 
@@ -220,8 +226,8 @@
                     center: london
                 });
             // The marker, positioned at coordinates
-            var londonmarker = new google.maps.Marker({
-                position: london,
+            var MadameTussaudsmarker = new google.maps.Marker({
+                position: MadameTussauds,
                 map: map
             });
 
@@ -252,9 +258,9 @@
 
             // adding pop-ups for markers
 
-            londonmarker.addListener('click', function() {
-                infoWindow.setContent(LondonInfo);
-                infoWindow.open(map, londonmarker);
+            MadameTussaudsmarker.addListener('click', function() {
+                infoWindow.setContent(MadameTussaudsInfo);
+                infoWindow.open(map, MadameTussaudsmarker);
             });
 
             britishMuseumCourtMarker.addListener('click', function() {
